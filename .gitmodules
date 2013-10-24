@@ -1,3 +1,6 @@
 [submodule "pygrow"]
 	path = pygrow
 	url = https://github.com/grow/pygrow.git
+[submodule "growedit"]
+	path = growedit
+	url = https://github.com/grow/growedit.git
