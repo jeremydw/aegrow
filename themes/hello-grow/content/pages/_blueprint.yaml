@@ -1,0 +1,3 @@
+title: Pages
+view: /views/pages.html
+path: /{slug}/

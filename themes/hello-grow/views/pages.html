@@ -1,0 +1,21 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>{{g.content.title}} – {{g.pod.title}}</title>
+<link rel="stylesheet" href="/media/main.css">
+<header>
+  <h1>{{g.pod.title}}</h1>
+</header>
+<nav>
+  <ul>
+    {% for page in g.entries('pages') %}
+    <li><a href="{{page.url}}">{{page.title}}</a>
+    {% endfor %}
+  </ul>
+</nav>
+<article>
+<h2>{{g.content.title}}</h2>
+{{g.content.html|safe}}
+</article>
+<footer>
+  <img src="/media/blastoff.png" alt="Grow site">
+</footer>
