@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{g.pod.title}}</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,700|Open+Sans+Condensed:300,700" rel="stylesheet" />
+    <script src="/media/js/jquery.min.js"></script>
+    <script src="/media/js/skel.min.js"></script>
+    <script src="/media/js/skel-panels.min.js"></script>
+    <script src="/media/js/init.js"></script>
+    <noscript>
+      <link rel="stylesheet" href="/media/css/skel-noscript.css">
+      <link rel="stylesheet" href="/media/css/style.css">
+      <link rel="stylesheet" href="/media/css/style-desktop.css">
+      <link rel="stylesheet" href="/media/css/style-wide.css">
+    </noscript>
+    <!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
+    <!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+    <!--[if lte IE 7]><link rel="stylesheet" href="css/ie7.css" /><![endif]-->
+  </head>
+  <body class="left-sidebar">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+      <!-- Content -->
+      <div id="content">
+        <div id="content-inner">
+
+          {% block main %}
+            {% for post in g.entries('posts') %}
+              {% include "/views/_post.html" %}
+            {% endfor %}
+
+              <!-- Pager.
+              <div class="pager">
+                <a href="#" class="button previous">Previous Page</a>
+                <div class="pages">
+                  <a href="#" class="active">1</a>
+                  <a href="#">2</a>
+                  <a href="#">3</a>
+                  <a href="#">4</a>
+                  <span>&hellip;</span>
+                  <a href="#">20</a>
+                </div>
+                <a href="#" class="button next">Next Page</a>
+              </div>
+              -->
+            {% endblock %}
+
+          </div>
+        </div>
+
+        <div id="sidebar" style="min-height: 500px">
+
+          <div id="logo">
+            <h1>{{g.pod.title}}</h1>
+          </div>
+
+          <nav id="nav">
+          <ul>
+            {% for page in g.entries('pages') %}
+              <li><a href="{{page.url}}">{{page.title}}</a>
+            {% endfor %}
+          </ul>
+          </nav>
+
+          <!-- Search -->
+          <!--
+          <section class="is-search">
+          <form method="post" action="#">
+            <input type="text" class="text" name="search" placeholder="Search" />
+          </form>
+          </section>
+          -->
+
+          <!-- Text -->
+          <!--
+          <section class="is-text-style1">
+          <div class="inner">
+            <p>
+            <strong>Striped:</strong> A free and fully responsive HTML5 site
+            template designed by <a href="http://n33.co/">AJ</a> for <a href="http://html5up.net/">HTML5 up!</a>
+            </p>
+          </div>
+          </section>
+          -->
+
+          <!-- Recent Posts -->
+          <!--
+          <section class="is-recent-posts">
+          <header>
+          <h2>Recent Posts</h2>
+          </header>
+          <ul>
+            <li><a href="#">Nothing happened</a></li>
+            <li><a href="#">My Dearest Cthulhu</a></li>
+            <li><a href="#">The Meme Meme</a></li>
+            <li><a href="#">Now Full Cyborg</a></li>
+            <li><a href="#">Temporal Flux</a></li>
+          </ul>
+          </section>
+          -->
+
+          <div id="copyright">
+            <p>
+            &copy; {{g.pod.title}}<br>
+            Images: <a href="http://n33.co">n33</a>, <a href="http://fotogrph.com">fotogrph</a><br />
+            Design: <a href="http://html5up.net/">HTML5 UP</a>
+          </div>
+
+        </div>
+
+      </div>

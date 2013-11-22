@@ -10,6 +10,8 @@ libraries:
   version: latest
 - name: jinja2
   version: "2.6"
+- name: webob
+  version: "1.1.1"
 
 handlers:
 
@@ -18,8 +20,39 @@ handlers:
   login: admin
   secure: always
 
+- url: /_ah/stats.*
+  script: google.appengine.ext.appstats.ui.app
+  login: admin
+
+- url: /_grow/public
+  static_dir: growedit/pod/public
+
+- url: /template
+  static_dir: growedit/pod/public/template
+
 - url: /.*
   script: growedit.main.application
+
+pagespeed:
+
+  domains_to_rewrite:
+  - http://gcdc2013-grow.appspot.com
+  - https://gcdc2013-grow.appspot.com
+
+  url_blacklist:
+  - http://*.p.gcdc2013-grow.appspot.com/*
+
+  enabled_rewriters:
+  - CollapseWhitespace
+  - CombineJs
+  - JsOptimize
+  - MinifyCss
+  - ProxyJs
+
+  disabled_rewriters:
+  - InlinePreviewImages
+  - LazyloadImages
+  - ProxyImages
 
 skip_files:
 
@@ -34,6 +67,26 @@ skip_files:
 - ^(.*/)?index\.yaml
 - ^(.*/)?index\.yml
 - ^(.*/)?utils/.*
+- .*/Jinja2-2.6/.*
 - .*/ace-builds/(kitchen-sink|src|src-min|src-noconflict|textarea)/.*
-- .*_test.*
+- .*/appengine-ndb-experiment/.*
+- .*/boto/bin/.*
+- .*/demos/.*
+- .*/doc/.*
+- .*/docs/.*
+- .*/examples/.*
+- .*/experimental/.*
+- .*/java/.*
+- .*/jinja2/.*
+- .*/samples/.*
+- .*/submodules/paste/.*
+- .*/test/cases/.*
 - .*/tests/.*
+- .*/webapp-improved/.*
+- .*/webapp-improved/lib/babel/.*
+- .*/webob/.*
+- .*/werkzeug/docs/.*
+- .*/werkzeug/examples/.*
+- .*/werkzeug/testsuite/.*
+- .*Mako-0.4.1/test/.*
+- .*_test.*

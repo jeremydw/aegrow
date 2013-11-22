@@ -1,0 +1,5 @@
+title: Untitled Site
+grow_version: 0.0.1
+
+flags:
+  public_dir: /media/
