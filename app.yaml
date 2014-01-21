@@ -1,8 +1,12 @@
 application: gcdc2013-grow
-version: beta
+version: dev
 api_version: 1
 runtime: python27
 threadsafe: true
+
+builtins:
+
+- deferred: on
 
 libraries:
 
@@ -10,6 +14,10 @@ libraries:
   version: latest
 - name: jinja2
   version: "2.6"
+- name: lxml
+  version: "latest"
+- name: webapp2
+  version: "2.5.2"
 - name: webob
   version: "1.1.1"
 
@@ -36,11 +44,15 @@ handlers:
 pagespeed:
 
   domains_to_rewrite:
+  - http://grow-beta.appspot.com
+  - https://grow-beta.appspot.com
   - http://gcdc2013-grow.appspot.com
   - https://gcdc2013-grow.appspot.com
 
   url_blacklist:
-  - http://*.p.gcdc2013-grow.appspot.com/*
+  - http://*.p.*.appspot.com/*
+  - http://dev.*.appspot.com/*
+  - https://dev.*.appspot.com/*
 
   enabled_rewriters:
   - CollapseWhitespace

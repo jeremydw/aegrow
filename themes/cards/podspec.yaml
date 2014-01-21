@@ -1,0 +1,5 @@
+grow_version: 0.0.1
+title: Untitled Blog
+
+flags:
+  static_dir: /static/
