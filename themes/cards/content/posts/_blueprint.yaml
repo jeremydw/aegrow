@@ -1,3 +1,0 @@
-path: /posts/{slug}/
-view: /views/post.html
-title: Posts
