@@ -1,4 +1,4 @@
-application: gcdc2013-grow
+application: grow-prod
 version: dev
 api_version: 1
 runtime: python27
@@ -41,30 +41,28 @@ handlers:
 - url: /.*
   script: growedit.main.application
 
-pagespeed:
-
-  domains_to_rewrite:
-  - http://grow-beta.appspot.com
-  - https://grow-beta.appspot.com
-  - http://gcdc2013-grow.appspot.com
-  - https://gcdc2013-grow.appspot.com
-
-  url_blacklist:
-  - http://*.p.*.appspot.com/*
-  - http://dev.*.appspot.com/*
-  - https://dev.*.appspot.com/*
-
-  enabled_rewriters:
-  - CollapseWhitespace
-  - CombineJs
-  - JsOptimize
-  - MinifyCss
-  - ProxyJs
-
-  disabled_rewriters:
-  - InlinePreviewImages
-  - LazyloadImages
-  - ProxyImages
+#pagespeed:
+#
+#  domains_to_rewrite:
+#  - http://grow-beta.appspot.com
+#  - https://grow-beta.appspot.com
+#
+#  url_blacklist:
+#  - http://*.p.*.appspot.com/*
+#  - http://dev.*.appspot.com/*
+#  - https://dev.*.appspot.com/*
+#
+#  enabled_rewriters:
+#  - CollapseWhitespace
+#  - CombineJs
+#  - JsOptimize
+#  - MinifyCss
+#  - ProxyJs
+#
+#  disabled_rewriters:
+#  - InlinePreviewImages
+#  - LazyloadImages
+#  - ProxyImages
 
 skip_files:
 
