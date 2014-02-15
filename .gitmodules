@@ -1,6 +1,9 @@
 [submodule "pygrow"]
 	path = pygrow
 	url = https://github.com/grow/pygrow.git
+[submodule "themes/cards"]
+	path = themes/cards
+	url = https://github.com/growthemes/cards.git
 [submodule "growedit"]
 	path = growedit
-	url = https://github.com/grow/growedit.git
+	url = https://github.com/jeremydw/growedit.git
